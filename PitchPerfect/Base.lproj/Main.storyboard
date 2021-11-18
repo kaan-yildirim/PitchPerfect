@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="teQ-X8-JUn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -38,6 +38,7 @@
                                 <state key="normal" image="Stop"/>
                                 <connections>
                                     <action selector="stopRecordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8SG-93-K7u"/>
+                                    <segue destination="FDF-LN-Wr4" kind="show" id="rRd-jA-EDV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,6 +53,7 @@
                             <constraint firstItem="Nbx-qf-wtz" firstAttribute="centerX" secondItem="Y9e-MD-M4N" secondAttribute="centerX" id="aQC-lx-LrV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="PKu-xB-HEf"/>
                     <connections>
                         <outlet property="recordButton" destination="Y9e-MD-M4N" id="mYb-Fx-Aol"/>
                         <outlet property="recordLabel" destination="Nbx-qf-wtz" id="MjY-1L-5ku"/>
@@ -59,6 +61,40 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="117.85714285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uHh-gw-m5L">
+            <objects>
+                <viewController id="FDF-LN-Wr4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bfz-qR-aHe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="15B-UD-VFr"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AfC-a4-TkV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NiO-VR-77q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uz3-qk-pc9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="teQ-X8-JUn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="en3-2q-ifw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vK5-Vs-K9T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xAQ-p0-omt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
@@ -68,6 +104,9 @@
         <image name="Stop" width="155" height="155"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
