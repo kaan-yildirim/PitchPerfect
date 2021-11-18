@@ -71,8 +71,34 @@
                     <view key="view" contentMode="scaleToFill" id="bfz-qR-aHe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HVs-aT-XdJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V4O-5U-TSc">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY3-hb-ypT" userLabel="Slow">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="774"/>
+                                                <state key="normal" image="Slow"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpA-um-Zd4" userLabel="Fast">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="774"/>
+                                                <state key="normal" image="Fast"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="15B-UD-VFr"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HVs-aT-XdJ" firstAttribute="leading" secondItem="15B-UD-VFr" secondAttribute="leading" id="4zF-en-Flm"/>
+                            <constraint firstItem="15B-UD-VFr" firstAttribute="bottom" secondItem="HVs-aT-XdJ" secondAttribute="bottom" id="Er9-qN-5r0"/>
+                            <constraint firstItem="15B-UD-VFr" firstAttribute="trailing" secondItem="HVs-aT-XdJ" secondAttribute="trailing" id="oZd-za-7wS"/>
+                            <constraint firstItem="HVs-aT-XdJ" firstAttribute="top" secondItem="15B-UD-VFr" secondAttribute="top" id="tnf-qQ-sRS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AfC-a4-TkV"/>
                 </viewController>
@@ -100,13 +126,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fast" width="90" height="90"/>
         <image name="Record" width="155" height="155"/>
+        <image name="Slow" width="90" height="90"/>
         <image name="Stop" width="155" height="155"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
