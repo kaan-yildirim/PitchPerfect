@@ -7,11 +7,11 @@
 
 import UIKit
 
-class RecordSoundsViewController: UIViewController {
+final class RecordSoundsViewController: UIViewController {
 
-    @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var recordLabel: UILabel!
-    @IBOutlet weak var stopRecordButton: UIButton!
+    @IBOutlet weak private var recordButton: UIButton!
+    @IBOutlet weak private var recordLabel: UILabel!
+    @IBOutlet weak private var stopRecordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +22,13 @@ class RecordSoundsViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
-    @IBAction func recordButtonPressed(_ sender: Any) {
+    @IBAction private func recordButtonPressed(_ sender: Any) {
         recordLabel.text = "Record in progress"
         stopRecordButton.isEnabled = true
         recordButton.isEnabled = false
     }
 
-    @IBAction func stopRecordButtonPressed(_ sender: Any) {
+    @IBAction private func stopRecordButtonPressed(_ sender: Any) {
         recordLabel.text = "Tap to record"
         stopRecordButton.isEnabled = false
         recordButton.isEnabled = true
