@@ -9,7 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordLabel: UILabel!
+    @IBOutlet weak var stopRecordButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
