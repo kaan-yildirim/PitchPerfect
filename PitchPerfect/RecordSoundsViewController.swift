@@ -15,25 +15,24 @@ final class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegat
     @IBOutlet weak private var stopRecordButton: UIButton!
 
     private var recorder: AVAudioRecorder!
-    enum RecordingState { case recording, notRecording }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI(text: "Tap to record", status: .notRecording)
+        configureUI(false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
-    private func configureUI(text: String, status: RecordingState) {
-        recordLabel.text = text
-        recordButton.isEnabled = status == .notRecording
-        stopRecordButton.isEnabled = status == .recording
+    private func configureUI(_ isRecording: Bool) {
+        stopRecordButton.isEnabled = isRecording
+        recordButton.isEnabled = !isRecording
+        recordLabel.text = isRecording ? "Recording ..." : "Tap To Record"
     }
 
     @IBAction private func recordButtonPressed(_ sender: Any) {
-        configureUI(text: "Record in progress", status: .recording)
+        configureUI(true)
 
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -50,8 +49,9 @@ final class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegat
         recorder.record()
     }
 
+    // MARK: - Stop Recording
     @IBAction private func stopRecordButtonPressed(_ sender: Any) {
-        configureUI(text: "Tap to record", status: .notRecording)
+        configureUI(false)
 
         recorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -67,7 +67,6 @@ final class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegat
     }
 
     // MARK: - Audio Recorder Delegate
-
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
             performSegue(withIdentifier: "stopRecording", sender: recorder.url)
